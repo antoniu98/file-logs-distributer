@@ -6,7 +6,7 @@ const {
   closeClient,
 } = require("../commons/MongoClient");
 
-const FREQ = process.env.READ_FREQ_MINUTES || 1;
+const FREQ = process.env.READ_FREQ_MINUTES || 5;
 const DURATION = FREQ * 60 * 1000;
 console.log(`📚 Reader will read every ${FREQ} minutes`);
 
