@@ -23,5 +23,5 @@
 
 ## Start writer:
 
-- Run in root folder: `npm run writer`
+- Run in root folder: `npm run writer <ID>`, for example: `npm run writer calculator_1`
 - Writer will append to the file set in `OUTPUT_FILE` var in `.env`

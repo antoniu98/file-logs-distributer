@@ -40,9 +40,13 @@ const closeClient = async (client) => {
   }
 };
 
-const addToCollection = (entry, collection) => {
+const addToCollection = (entry_id, entry, collection) => {
   const document = { entry, dateAdded: new Date().getTime(), author: AUTHOR };
-  collection.insertOne(document).then((resp) => {
+  collection.findOneAndReplace(
+    { _id : entry_id },
+    document,
+    { upsert: true } // Insert if not found
+  ).then((resp) => {
     console.log(
       `🟩 Added ${JSON.stringify(
         document
